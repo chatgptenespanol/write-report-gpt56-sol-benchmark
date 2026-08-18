@@ -1,0 +1,278 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "scope",
+    "executive_summary",
+    "facts",
+    "interpretations",
+    "recommendations",
+    "limitations",
+    "missing_data",
+    "source_registry",
+    "verification_checklist"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entity",
+        "period",
+        "audience",
+        "currency"
+      ],
+      "properties": {
+        "entity": {
+          "type": "string",
+          "enum": [
+            "Comercio Faro"
+          ]
+        },
+        "period": {
+          "type": "string",
+          "enum": [
+            "abril-junio de 2026"
+          ]
+        },
+        "audience": {
+          "type": "string",
+          "enum": [
+            "dirección de operaciones"
+          ]
+        },
+        "currency": {
+          "type": "string",
+          "enum": [
+            "USD"
+          ]
+        }
+      }
+    },
+    "executive_summary": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "facts": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "metric_id",
+          "label",
+          "value",
+          "unit",
+          "numerator",
+          "denominator",
+          "evidence_ids",
+          "interpretation_limit"
+        ],
+        "properties": {
+          "metric_id": {
+            "type": "string",
+            "enum": [
+              "total_net_revenue_usd",
+              "total_conversion_pct",
+              "net_aov_usd",
+              "discount_rate_pct",
+              "refund_rate_pct",
+              "sla_resolution_pct",
+              "weighted_delivery_days",
+              "aggregate_nps",
+              "conversion_change_apr_to_jun_pp",
+              "paid_net_revenue_usd",
+              "paid_ad_spend_usd",
+              "paid_roas_net"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "USD",
+              "%",
+              "puntos porcentuales",
+              "días",
+              "puntos",
+              "ratio"
+            ]
+          },
+          "numerator": {
+            "type": "number"
+          },
+          "denominator": {
+            "type": "number"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 18,
+            "items": {
+              "type": "string",
+              "pattern": "^F0(?:0[1-9]|1[0-8])$"
+            }
+          },
+          "interpretation_limit": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "interpretations": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "metric_ids",
+          "evidence_ids",
+          "uncertainty"
+        ],
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "metric_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]{2,39}$"
+            }
+          },
+          "evidence_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 18,
+            "items": {
+              "type": "string",
+              "pattern": "^F0(?:0[1-9]|1[0-8])$"
+            }
+          },
+          "uncertainty": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "hypothesis",
+          "action",
+          "success_metric",
+          "metric_ids",
+          "evidence_ids"
+        ],
+        "properties": {
+          "hypothesis": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "success_metric": {
+            "type": "string"
+          },
+          "metric_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]{2,39}$"
+            }
+          },
+          "evidence_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 18,
+            "items": {
+              "type": "string",
+              "pattern": "^F0(?:0[1-9]|1[0-8])$"
+            }
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_data": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_registry": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "evidence_id",
+          "source_type",
+          "description"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string",
+            "pattern": "^F0(?:0[1-9]|1[0-8])$"
+          },
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "fila_dataset_sintetico"
+            ]
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verification_checklist": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 10,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
