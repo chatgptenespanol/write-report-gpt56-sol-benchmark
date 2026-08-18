@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "completed_at_utc": "2026-08-18T13:48:11.565Z",
+  "frozen_manifest_sha256": "68dba0ed369fe18ac1277a52ec2dc658a46be8de98fa8afaa369bdd89bb41b8a",
+  "requested": 3,
+  "completed": 2,
+  "terminal_failures": 1,
+  "known_cost_usd": 0.31846399999999997,
+  "unknown_attempts": 1,
+  "unknown_reserved_upper_bound_usd": 0.2495,
+  "maximum_total_cost_usd": 0.5679639999999999,
+  "reserved_upper_bound_three_requests_usd": 0.7484999999999999,
+  "results": [
+    {
+      "run_id": "write-report__gpt-5.6-sol__r1",
+      "skipped": false,
+      "terminal_failure": true,
+      "failure_code": "http_or_parse_failure_503",
+      "billing": {
+        "status": "unknown",
+        "known_cost_usd": null,
+        "reserved_upper_bound_usd": 0.2495
+      }
+    },
+    {
+      "run_id": "write-report__gpt-5.6-sol__r2",
+      "skipped": false,
+      "terminal_failure": false,
+      "billing": {
+        "status": "known",
+        "known_cost_usd": 0.163297,
+        "reserved_upper_bound_usd": 0.2495
+      },
+      "latency_ms": 298603
+    },
+    {
+      "run_id": "write-report__gpt-5.6-sol__r3",
+      "skipped": false,
+      "terminal_failure": false,
+      "billing": {
+        "status": "known",
+        "known_cost_usd": 0.155167,
+        "reserved_upper_bound_usd": 0.2495
+      },
+      "latency_ms": 70064
+    }
+  ]
+}
