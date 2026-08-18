@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "cg-report-synthetic-v2",
+  "model": "gpt-5.6-sol",
+  "repetitions": 3,
+  "accepted_outputs": 2,
+  "semantic_review_required_outputs": 3,
+  "testable_outputs": 2,
+  "total_rules_passed": 36,
+  "total_rules_failed": 1,
+  "total_rules_not_run": 17,
+  "total_rule_slots": 54,
+  "run_summary": {
+    "completed_at_utc": "2026-08-18T13:48:11.565Z",
+    "completed": 2,
+    "terminal_failures": 1,
+    "known_cost_usd": 0.31846399999999997,
+    "unknown_attempts": 1,
+    "maximum_total_cost_usd": 0.5679639999999999
+  },
+  "runs": [
+    {
+      "run_id": "write-report__gpt-5.6-sol__r1",
+      "automatic_accepted": false,
+      "semantic_review_required": true,
+      "outcome": "terminal_failure",
+      "model_returned": null,
+      "response_status": null,
+      "latency_ms": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "estimated_cost_usd": null,
+      "passed": 0,
+      "failed": 1,
+      "not_run": 17,
+      "total": 18
+    },
+    {
+      "run_id": "write-report__gpt-5.6-sol__r2",
+      "automatic_accepted": true,
+      "semantic_review_required": true,
+      "outcome": "canonical",
+      "model_returned": "gpt-5.6-sol",
+      "response_status": "completed",
+      "latency_ms": 298603,
+      "input_tokens": 2747,
+      "output_tokens": 5397,
+      "estimated_cost_usd": 0.163297,
+      "passed": 18,
+      "failed": 0,
+      "not_run": 0,
+      "total": 18
+    },
+    {
+      "run_id": "write-report__gpt-5.6-sol__r3",
+      "automatic_accepted": true,
+      "semantic_review_required": true,
+      "outcome": "canonical",
+      "model_returned": "gpt-5.6-sol",
+      "response_status": "completed",
+      "latency_ms": 70064,
+      "input_tokens": 2747,
+      "output_tokens": 5126,
+      "estimated_cost_usd": 0.155167,
+      "passed": 18,
+      "failed": 0,
+      "not_run": 0,
+      "total": 18
+    }
+  ]
+}

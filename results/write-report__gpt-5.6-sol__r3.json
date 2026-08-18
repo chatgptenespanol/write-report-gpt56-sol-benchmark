@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "write-report__gpt-5.6-sol__r3",
+  "repetition": 3,
+  "outcome": "canonical",
+  "parse_status": "valid_json",
+  "accepted": true,
+  "semantic_review_required": true,
+  "critical_failures": 0,
+  "rules_passed": 18,
+  "rules_failed": 0,
+  "rules_not_run": 0,
+  "rules_total": 18,
+  "model_returned": "gpt-5.6-sol",
+  "response_status": "completed",
+  "latency_ms": 70064,
+  "input_tokens": 2747,
+  "output_tokens": 5126,
+  "estimated_cost_usd": 0.155167,
+  "rules": [
+    {
+      "id": "G01",
+      "category": "gate",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Estructura raíz válida"
+    },
+    {
+      "id": "R01",
+      "category": "metrics",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Inventario exacto de 12 métricas"
+    },
+    {
+      "id": "R02",
+      "category": "metrics",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Valores numéricos exactamente iguales al ground truth redondeado"
+    },
+    {
+      "id": "R03",
+      "category": "metrics",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Unidades exactas"
+    },
+    {
+      "id": "R04",
+      "category": "metrics",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Numeradores y denominadores exactos"
+    },
+    {
+      "id": "R05",
+      "category": "traceability",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Evidencia completa por métrica"
+    },
+    {
+      "id": "R06",
+      "category": "traceability",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Registro F001-F018 exacto y único"
+    },
+    {
+      "id": "R07",
+      "category": "traceability",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Cada declaración vincula métricas declaradas con su conjunto de evidencia exacto"
+    },
+    {
+      "id": "R08",
+      "category": "recommendations",
+      "critical": false,
+      "status": "pass",
+      "pass": true,
+      "details": "Tres hipótesis con acción y métrica de éxito"
+    },
+    {
+      "id": "R09",
+      "category": "interpretation",
+      "critical": false,
+      "status": "pass",
+      "pass": true,
+      "details": "Interpretaciones con incertidumbre explícita"
+    },
+    {
+      "id": "R10",
+      "category": "discipline",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Incluye literalmente el límite sobre beneficio, margen, utilidad, lucro y rentabilidad"
+    },
+    {
+      "id": "R11",
+      "category": "discipline",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Incluye literalmente el límite sobre atribución causal"
+    },
+    {
+      "id": "R12",
+      "category": "limitations",
+      "critical": false,
+      "status": "pass",
+      "pass": true,
+      "details": "Datos ausentes mínimos declarados"
+    },
+    {
+      "id": "R13",
+      "category": "limitations",
+      "critical": false,
+      "status": "pass",
+      "pass": true,
+      "details": "Limitaciones mínimas declaradas"
+    },
+    {
+      "id": "R14",
+      "category": "scope",
+      "critical": false,
+      "status": "pass",
+      "pass": true,
+      "details": "Sin URLs con http(s) o www en la salida"
+    },
+    {
+      "id": "R15",
+      "category": "scope",
+      "critical": false,
+      "status": "pass",
+      "pass": true,
+      "details": "Sin las marcas de proveedores de IA enumeradas por la regla"
+    },
+    {
+      "id": "R16",
+      "category": "privacy",
+      "critical": true,
+      "status": "pass",
+      "pass": true,
+      "details": "Sin secretos ni datos personales detectables"
+    },
+    {
+      "id": "R17",
+      "category": "method",
+      "critical": false,
+      "status": "pass",
+      "pass": true,
+      "details": "Límites de interpretación presentes; las fórmulas se recalculan fuera de la salida"
+    }
+  ]
+}

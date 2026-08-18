@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "write-report__gpt-5.6-sol__r1",
+  "repetition": 1,
+  "outcome": "terminal_failure",
+  "parse_status": "not_available",
+  "accepted": false,
+  "semantic_review_required": true,
+  "critical_failures": 1,
+  "rules_passed": 0,
+  "rules_failed": 1,
+  "rules_not_run": 17,
+  "rules_total": 18,
+  "model_returned": null,
+  "response_status": null,
+  "latency_ms": null,
+  "input_tokens": null,
+  "output_tokens": null,
+  "estimated_cost_usd": null,
+  "rules": [
+    {
+      "id": "G01",
+      "category": "gate",
+      "critical": true,
+      "status": "fail",
+      "pass": false,
+      "details": "Resultado terminal: http_or_parse_failure_503"
+    },
+    {
+      "id": "R01",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R02",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R03",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R04",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R05",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R06",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R07",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R08",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R09",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R10",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R11",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R12",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R13",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R14",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R15",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R16",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    },
+    {
+      "id": "R17",
+      "category": "not_executed",
+      "critical": false,
+      "status": "not_run",
+      "pass": null,
+      "details": "No se ejecutó tras fallar la puerta de salida"
+    }
+  ]
+}
