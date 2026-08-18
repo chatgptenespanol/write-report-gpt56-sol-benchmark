@@ -1,0 +1,21 @@
+{
+  "name": "write-report-gpt56-sol-benchmark",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:ground-truth": "node src/build-ground-truth.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "capture:runtime": "node src/capture-runtime.mjs",
+    "freeze": "node src/freeze.mjs",
+    "verify:frozen": "node src/verify-frozen.mjs",
+    "run": "node src/run-cli.mjs",
+    "evaluate": "node src/evaluate.mjs",
+    "verify:editorial-review": "node src/editorial-review.mjs",
+    "report": "node src/build-report.mjs",
+    "chart": "node src/build-chart.mjs",
+    "checksums": "node src/build-checksums.mjs",
+    "verify": "node src/verify-package.mjs",
+    "release": "node publication/build-release.mjs"
+  }
+}
