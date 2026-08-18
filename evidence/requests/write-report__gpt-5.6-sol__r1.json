@@ -1,0 +1,313 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "write-report__gpt-5.6-sol__r1",
+  "sequence": 1,
+  "repetition": 1,
+  "request": {
+    "model": "gpt-5.6-sol",
+    "input": [
+      {
+        "role": "system",
+        "content": "Genera un borrador de informe verificable usando únicamente los datos sintéticos proporcionados. Respeta el esquema, no inventes hechos y separa hechos, interpretaciones e hipótesis."
+      },
+      {
+        "role": "user",
+        "content": "# Tarea congelada: informe ejecutivo verificable\n\nPrepara un **borrador estructurado**, sujeto a revisión humana, para la dirección de operaciones de Comercio Faro. El periodo es abril-junio de 2026 y la moneda es USD. Usa únicamente el dataset sintético y su diccionario incluidos al final. No uses conocimiento externo, herramientas, navegación ni fuentes inventadas.\n\n## Reglas de cálculo\n\n1. `net_revenue = gross_revenue_usd - discounts_usd - refunds_usd`.\n2. `conversion_pct = orders / sessions * 100`.\n3. `net_aov_usd = net_revenue / orders`.\n4. `discount_rate_pct = discounts_usd / gross_revenue_usd * 100`.\n5. `refund_rate_pct = refunds_usd / gross_revenue_usd * 100`.\n6. `sla_resolution_pct = resolved_within_sla / support_cases * 100`.\n7. `weighted_delivery_days = delivery_days_total / orders`.\n8. `aggregate_nps = (promoters - detractors) / nps_responses * 100`.\n9. `conversion_change_apr_to_jun_pp = conversion_pct_junio - conversion_pct_abril` en puntos porcentuales, no como variación relativa.\n10. Para el canal paid, `paid_roas_net = paid_net_revenue_usd / paid_ad_spend_usd`.\n\nCalcula con precisión completa y redondea solo el valor final. Redondea numéricamente porcentajes, días, NPS, AOV, ratios e importes agregados en USD a dos decimales; JSON no necesita conservar ceros finales. En cada hecho incluye el numerador y denominador numéricos que utilizaste. Para `total_net_revenue_usd` y `paid_net_revenue_usd`, usa denominador 1. Para `conversion_change_apr_to_jun_pp`, usa como numerador la conversión de junio y como denominador la conversión de abril, ambas ya expresadas en porcentaje y redondeadas a dos decimales. Para `paid_ad_spend_usd`, usa denominador 1.\n\n## Contrato editorial\n\n- Incluye exactamente una entrada para cada uno de los 12 `metric_id` admitidos por el esquema.\n- En los ocho indicadores agregados de todo el periodo usa F001-F018. En `conversion_change_apr_to_jun_pp` usa las seis filas de abril y las seis de junio. En los tres indicadores del canal paid usa exactamente F002, F004, F006, F008, F010, F012, F014, F016 y F018.\n- No llames beneficio, margen o rentabilidad a los ingresos netos; no hay costes operativos ni coste de producto.\n- No atribuyas causas. Una coincidencia temporal o por segmento no demuestra causalidad.\n- Separa hechos, interpretaciones e hipótesis de actuación.\n- Toda interpretación y recomendación debe declarar entre uno y tres `metric_ids`. Sus `evidence_ids` deben ser exactamente la unión, sin duplicados, de los identificadores exigidos por esos indicadores: F001-F018 para los indicadores agregados; las seis filas de abril y las seis de junio para `conversion_change_apr_to_jun_pp`; y las nueve filas paid para los tres indicadores paid.\n- Presenta cada recomendación como una hipótesis que debe probarse y añade una métrica de éxito.\n- En `missing_data` incluye exactamente estas cuatro cadenas, sin añadir otras: `Margen o coste de producto`, `Inventario disponible`, `Cohortes o clientes repetidos`, `Grupo de control o diseño causal`.\n- Si mencionas beneficio o causalidad en un texto narrativo, expresa el límite de forma inequívoca. Se aceptan, entre otras, fórmulas como `no se puede determinar`, `no permite determinar`, `no explica`, `no hay base para afirmar` o `datos insuficientes para calcular`; nunca afirmes beneficio o causalidad como hechos.\n- En `limitations` incluye exactamente estas cinco cadenas, sin reescribirlas ni añadir otras: `Todos los datos son sintéticos y no representan una empresa real.`, `El periodo de tres meses es corto para generalizar tendencias.`, `El NPS usa su propia muestra de respuestas y no todos los pedidos.`, `No se puede determinar beneficio, margen, utilidad, lucro ni rentabilidad con este conjunto de datos.`, `No se puede atribuir causalidad con este conjunto de datos; cualquier explicación es una hipótesis que requiere un diseño causal.`\n- El registro de fuentes debe contener F001-F018 una sola vez cada uno. Para cada identificador `Fnnn`, usa exactamente la descripción `Fila sintética N del archivo CSV congelado`, donde N es el número decimal sin ceros iniciales (por ejemplo, F001 usa `Fila sintética 1 del archivo CSV congelado`).\n- Español neutro. No incluyas enlaces, nombres de personas, datos personales, secretos, precios del proveedor ni afirmaciones sobre otros modelos.\n\n## Dataset sintético\n\nEl contenido de `data/cg-report-synthetic-v2.csv` y `data/data-dictionary.json` se incorpora literalmente al request por el ejecutor antes de enviar la solicitud.\n\n\n## CSV literal\n\n```csv\nevidence_id,month,country,channel,sessions,orders,gross_revenue_usd,discounts_usd,refunds_usd,ad_spend_usd,support_cases,resolved_within_sla,delivery_days_total,nps_responses,promoters,detractors\nF001,2026-04,MX,organic,4000,180,10000,350,220,0,50,42,590,60,38,8\nF002,2026-04,MX,paid,3500,160,9500,450,280,1800,45,38,540,55,34,9\nF003,2026-04,ES,organic,3200,145,9000,300,190,0,40,36,450,50,33,6\nF004,2026-04,ES,paid,2800,130,8200,380,250,1500,38,31,430,45,28,8\nF005,2026-04,CO,organic,3000,125,6500,260,180,0,44,37,470,48,29,9\nF006,2026-04,CO,paid,2500,110,6000,300,210,1100,42,34,430,44,25,10\nF007,2026-05,MX,organic,4200,195,11000,370,230,0,48,42,620,62,41,7\nF008,2026-05,MX,paid,3700,175,10200,460,260,1900,47,40,570,58,37,8\nF009,2026-05,ES,organic,3350,155,9500,310,200,0,42,37,470,52,35,6\nF010,2026-05,ES,paid,2950,142,8700,390,240,1550,39,33,450,47,30,7\nF011,2026-05,CO,organic,3150,135,7000,270,170,0,45,39,480,50,31,8\nF012,2026-05,CO,paid,2650,120,6400,310,200,1150,43,36,450,45,27,9\nF013,2026-06,MX,organic,4400,210,12000,390,240,0,50,45,630,65,44,7\nF014,2026-06,MX,paid,3900,190,11000,470,270,2000,49,43,590,60,39,8\nF015,2026-06,ES,organic,3500,168,10000,320,210,0,43,39,490,55,37,6\nF016,2026-06,ES,paid,3100,155,9300,400,250,1600,41,35,470,49,32,7\nF017,2026-06,CO,organic,3300,148,7600,280,180,0,46,40,510,52,33,8\nF018,2026-06,CO,paid,2800,131,6900,320,210,1200,44,37,480,47,29,9\n```\n\n## Diccionario literal\n\n```json\n{\n  \"schema_version\": \"1.0.0\",\n  \"dataset_id\": \"cg-report-synthetic-v2\",\n  \"language\": \"es-neutral\",\n  \"entity\": \"Comercio Faro (empresa ficticia)\",\n  \"period\": \"2026-04 a 2026-06\",\n  \"synthetic\": true,\n  \"columns\": {\n    \"evidence_id\": \"Identificador estable de la fila.\",\n    \"month\": \"Mes en formato AAAA-MM.\",\n    \"country\": \"Mercado ficticio: MX, ES o CO.\",\n    \"channel\": \"organic o paid.\",\n    \"sessions\": \"Sesiones registradas en el segmento.\",\n    \"orders\": \"Pedidos del segmento.\",\n    \"gross_revenue_usd\": \"Ingresos brutos en USD; no equivale a beneficio.\",\n    \"discounts_usd\": \"Descuentos en USD.\",\n    \"refunds_usd\": \"Reembolsos en USD.\",\n    \"ad_spend_usd\": \"Gasto publicitario en USD; cero en organic.\",\n    \"support_cases\": \"Casos de soporte.\",\n    \"resolved_within_sla\": \"Casos resueltos dentro del SLA.\",\n    \"delivery_days_total\": \"Suma de días de entrega de todos los pedidos del segmento.\",\n    \"nps_responses\": \"Respuestas NPS.\",\n    \"promoters\": \"Respuestas promotoras.\",\n    \"detractors\": \"Respuestas detractoras.\"\n  },\n  \"privacy_note\": \"No contiene personas, empresas, pedidos ni resultados reales. Todos los valores son sintéticos.\"\n}\n```"
+      }
+    ],
+    "reasoning": {
+      "effort": "medium",
+      "context": "current_turn"
+    },
+    "max_output_tokens": 6000,
+    "service_tier": "default",
+    "store": false,
+    "stream": false,
+    "tools": [],
+    "text": {
+      "verbosity": "medium",
+      "format": {
+        "type": "json_schema",
+        "name": "verified_business_report",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "scope",
+            "executive_summary",
+            "facts",
+            "interpretations",
+            "recommendations",
+            "limitations",
+            "missing_data",
+            "source_registry",
+            "verification_checklist"
+          ],
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "entity",
+                "period",
+                "audience",
+                "currency"
+              ],
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "enum": [
+                    "Comercio Faro"
+                  ]
+                },
+                "period": {
+                  "type": "string",
+                  "enum": [
+                    "abril-junio de 2026"
+                  ]
+                },
+                "audience": {
+                  "type": "string",
+                  "enum": [
+                    "dirección de operaciones"
+                  ]
+                },
+                "currency": {
+                  "type": "string",
+                  "enum": [
+                    "USD"
+                  ]
+                }
+              }
+            },
+            "executive_summary": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 5,
+              "items": {
+                "type": "string"
+              }
+            },
+            "facts": {
+              "type": "array",
+              "minItems": 12,
+              "maxItems": 12,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "metric_id",
+                  "label",
+                  "value",
+                  "unit",
+                  "numerator",
+                  "denominator",
+                  "evidence_ids",
+                  "interpretation_limit"
+                ],
+                "properties": {
+                  "metric_id": {
+                    "type": "string",
+                    "enum": [
+                      "total_net_revenue_usd",
+                      "total_conversion_pct",
+                      "net_aov_usd",
+                      "discount_rate_pct",
+                      "refund_rate_pct",
+                      "sla_resolution_pct",
+                      "weighted_delivery_days",
+                      "aggregate_nps",
+                      "conversion_change_apr_to_jun_pp",
+                      "paid_net_revenue_usd",
+                      "paid_ad_spend_usd",
+                      "paid_roas_net"
+                    ]
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit": {
+                    "type": "string",
+                    "enum": [
+                      "USD",
+                      "%",
+                      "puntos porcentuales",
+                      "días",
+                      "puntos",
+                      "ratio"
+                    ]
+                  },
+                  "numerator": {
+                    "type": "number"
+                  },
+                  "denominator": {
+                    "type": "number"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 18,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^F0(?:0[1-9]|1[0-8])$"
+                    }
+                  },
+                  "interpretation_limit": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "interpretations": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "text",
+                  "metric_ids",
+                  "evidence_ids",
+                  "uncertainty"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "metric_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_]{2,39}$"
+                    }
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 18,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^F0(?:0[1-9]|1[0-8])$"
+                    }
+                  },
+                  "uncertainty": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "recommendations": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "hypothesis",
+                  "action",
+                  "success_metric",
+                  "metric_ids",
+                  "evidence_ids"
+                ],
+                "properties": {
+                  "hypothesis": {
+                    "type": "string"
+                  },
+                  "action": {
+                    "type": "string"
+                  },
+                  "success_metric": {
+                    "type": "string"
+                  },
+                  "metric_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_]{2,39}$"
+                    }
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 18,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^F0(?:0[1-9]|1[0-8])$"
+                    }
+                  }
+                }
+              }
+            },
+            "limitations": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string"
+              }
+            },
+            "missing_data": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "string"
+              }
+            },
+            "source_registry": {
+              "type": "array",
+              "minItems": 18,
+              "maxItems": 18,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "evidence_id",
+                  "source_type",
+                  "description"
+                ],
+                "properties": {
+                  "evidence_id": {
+                    "type": "string",
+                    "pattern": "^F0(?:0[1-9]|1[0-8])$"
+                  },
+                  "source_type": {
+                    "type": "string",
+                    "enum": [
+                      "fila_dataset_sintetico"
+                    ]
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "verification_checklist": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 10,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
