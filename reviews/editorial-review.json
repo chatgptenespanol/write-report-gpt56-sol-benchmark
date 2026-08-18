@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "method": "editorial-review-protocol-v1",
+  "reviewed_at_utc": "2026-08-18T13:58:33.227Z",
+  "reviewer": {
+    "name": "Ahmed ALy",
+    "type": "site_owner",
+    "human_attestation": true
+  },
+  "runs": [
+    {
+      "run_id": "write-report__gpt-5.6-sol__r1",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "decisions": [
+        { "id": "E01", "status": "not_testable", "note": "HTTP 503; no hubo salida revisable." },
+        { "id": "E02", "status": "not_testable", "note": "HTTP 503; no hubo salida revisable." },
+        { "id": "E03", "status": "not_testable", "note": "HTTP 503; no hubo salida revisable." },
+        { "id": "E04", "status": "not_testable", "note": "HTTP 503; no hubo salida revisable." },
+        { "id": "E05", "status": "not_testable", "note": "HTTP 503; no hubo salida revisable." },
+        { "id": "E06", "status": "not_testable", "note": "HTTP 503; no hubo salida revisable." },
+        { "id": "E07", "status": "not_testable", "note": "HTTP 503; no hubo salida revisable." }
+      ],
+      "overall": "not_testable",
+      "notes": "La primera solicitud recibió HTTP 503 y no se reintentó; no se interpreta como fallo de calidad del modelo."
+    },
+    {
+      "run_id": "write-report__gpt-5.6-sol__r2",
+      "output_sha256": "210727fcc8f1137660c43e844142c1012f52ebc4dc77aba42fd6dc81e511688a",
+      "decisions": [
+        { "id": "E01", "status": "pass", "note": "Distingue ingresos netos de beneficio, margen, utilidad, lucro y rentabilidad." },
+        { "id": "E02", "status": "pass", "note": "No atribuye causalidad a variables observadas y declara las limitaciones causales." },
+        { "id": "E03", "status": "pass", "note": "Separa hechos calculados, interpretaciones e hipótesis de actuación." },
+        { "id": "E04", "status": "pass", "note": "Las interpretaciones concuerdan con los metric_ids y las filas citadas." },
+        { "id": "E05", "status": "pass", "note": "Las recomendaciones se presentan como hipótesis comprobables." },
+        { "id": "E06", "status": "pass", "note": "No añade hechos, marcas, enlaces, personas, secretos ni datos personales ajenos al dataset sintético." },
+        { "id": "E07", "status": "pass", "note": "El español es neutro, claro y comprensible para distintos países hispanohablantes." }
+      ],
+      "overall": "pass",
+      "notes": "Salida completa revisada por el propietario del sitio; sin observaciones editoriales bloqueantes."
+    },
+    {
+      "run_id": "write-report__gpt-5.6-sol__r3",
+      "output_sha256": "bc1350019e030c86513764dba706180cfaad5cfee7c858f1d676acc02755b156",
+      "decisions": [
+        { "id": "E01", "status": "pass", "note": "Distingue ingresos netos de beneficio, margen, utilidad, lucro y rentabilidad." },
+        { "id": "E02", "status": "pass", "note": "No atribuye causalidad y acompaña las relaciones descriptivas con límites explícitos." },
+        { "id": "E03", "status": "pass", "note": "Separa hechos calculados, interpretaciones e hipótesis de actuación." },
+        { "id": "E04", "status": "pass", "note": "Las interpretaciones concuerdan con los metric_ids y las filas citadas." },
+        { "id": "E05", "status": "pass", "note": "Las recomendaciones se presentan como hipótesis comprobables." },
+        { "id": "E06", "status": "pass", "note": "No añade hechos, marcas, enlaces, personas, secretos ni datos personales ajenos al dataset sintético." },
+        { "id": "E07", "status": "pass", "note": "El español es neutral y comprensible; dos expresiones son pesadas, pero no bloquean la revisión y no se citarán literalmente en el artículo." }
+      ],
+      "overall": "pass",
+      "notes": "Salida completa revisada por el propietario del sitio. No citar aisladamente 'lo que produjo un ROAS'; conservar su contexto no causal."
+    }
+  ]
+}
