@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "cg-report-synthetic-v2",
+  "language": "es-neutral",
+  "entity": "Comercio Faro (empresa ficticia)",
+  "period": "2026-04 a 2026-06",
+  "synthetic": true,
+  "columns": {
+    "evidence_id": "Identificador estable de la fila.",
+    "month": "Mes en formato AAAA-MM.",
+    "country": "Mercado ficticio: MX, ES o CO.",
+    "channel": "organic o paid.",
+    "sessions": "Sesiones registradas en el segmento.",
+    "orders": "Pedidos del segmento.",
+    "gross_revenue_usd": "Ingresos brutos en USD; no equivale a beneficio.",
+    "discounts_usd": "Descuentos en USD.",
+    "refunds_usd": "Reembolsos en USD.",
+    "ad_spend_usd": "Gasto publicitario en USD; cero en organic.",
+    "support_cases": "Casos de soporte.",
+    "resolved_within_sla": "Casos resueltos dentro del SLA.",
+    "delivery_days_total": "Suma de días de entrega de todos los pedidos del segmento.",
+    "nps_responses": "Respuestas NPS.",
+    "promoters": "Respuestas promotoras.",
+    "detractors": "Respuestas detractoras."
+  },
+  "privacy_note": "No contiene personas, empresas, pedidos ni resultados reales. Todos los valores son sintéticos."
+}
