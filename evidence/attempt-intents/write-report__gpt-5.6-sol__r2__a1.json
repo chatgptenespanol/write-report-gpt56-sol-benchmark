@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "write-report__gpt-5.6-sol__r2",
+  "attempt": 1,
+  "started_at_utc": "2026-08-18T13:42:02.804Z",
+  "request_sha256": "de8cdf65b13bb09606ba8a481b569e6e72653184bdc404fffc0f7a7207973023",
+  "frozen_manifest_sha256": "68dba0ed369fe18ac1277a52ec2dc658a46be8de98fa8afaa369bdd89bb41b8a",
+  "model": "gpt-5.6-sol",
+  "reserved_max_cost_usd": 0.2495
+}
