@@ -1,0 +1,361 @@
+{
+  "schema_version": "1.0.0",
+  "request_sha256": "de8cdf65b13bb09606ba8a481b569e6e72653184bdc404fffc0f7a7207973023",
+  "intent_sha256": "2bd9ffae9536d569968897673a4e773d7d9eaff88c5fb3d61f99241bf266ffc6",
+  "attempt_sha256": "f26de4a5721706b66eefee8951d0776523647e0a1f0e7bfe3882eaf4fb784854",
+  "frozen_manifest_sha256": "68dba0ed369fe18ac1277a52ec2dc658a46be8de98fa8afaa369bdd89bb41b8a",
+  "metadata": {
+    "schema_version": "1.0.0",
+    "run_id": "write-report__gpt-5.6-sol__r2",
+    "sequence": 2,
+    "repetition": 2,
+    "model_requested": "gpt-5.6-sol",
+    "model_returned": "gpt-5.6-sol",
+    "started_at_utc": "2026-08-18T13:42:02.804Z",
+    "ended_at_utc": "2026-08-18T13:47:01.424Z",
+    "service_tier": "default",
+    "latency_ms": 298603,
+    "http_status": 200,
+    "response_status": "completed",
+    "input_tokens": 2747,
+    "output_tokens": 5397,
+    "reasoning_tokens": 1949,
+    "cached_input_tokens": 2744,
+    "cache_write_tokens": 0,
+    "output_text_chars": 12724,
+    "estimated_cost_usd": 0.163297,
+    "reserved_max_cost_usd": 0.2495,
+    "request_sha256": "de8cdf65b13bb09606ba8a481b569e6e72653184bdc404fffc0f7a7207973023",
+    "intent_sha256": "2bd9ffae9536d569968897673a4e773d7d9eaff88c5fb3d61f99241bf266ffc6",
+    "attempt_sha256": "f26de4a5721706b66eefee8951d0776523647e0a1f0e7bfe3882eaf4fb784854",
+    "frozen_manifest_sha256": "68dba0ed369fe18ac1277a52ec2dc658a46be8de98fa8afaa369bdd89bb41b8a"
+  },
+  "response": {
+    "object": "response",
+    "created_at": 1787060523,
+    "status": "completed",
+    "incomplete_details": null,
+    "max_output_tokens": 6000,
+    "model": "gpt-5.6-sol",
+    "reasoning": {
+      "context": "current_turn",
+      "effort": "medium",
+      "mode": "standard",
+      "summary": null
+    },
+    "service_tier": "default",
+    "store": false,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "description": null,
+        "name": "verified_business_report",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "scope",
+            "executive_summary",
+            "facts",
+            "interpretations",
+            "recommendations",
+            "limitations",
+            "missing_data",
+            "source_registry",
+            "verification_checklist"
+          ],
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "entity",
+                "period",
+                "audience",
+                "currency"
+              ],
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "enum": [
+                    "Comercio Faro"
+                  ]
+                },
+                "period": {
+                  "type": "string",
+                  "enum": [
+                    "abril-junio de 2026"
+                  ]
+                },
+                "audience": {
+                  "type": "string",
+                  "enum": [
+                    "dirección de operaciones"
+                  ]
+                },
+                "currency": {
+                  "type": "string",
+                  "enum": [
+                    "USD"
+                  ]
+                }
+              }
+            },
+            "executive_summary": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 5,
+              "items": {
+                "type": "string"
+              }
+            },
+            "facts": {
+              "type": "array",
+              "minItems": 12,
+              "maxItems": 12,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "metric_id",
+                  "label",
+                  "value",
+                  "unit",
+                  "numerator",
+                  "denominator",
+                  "evidence_ids",
+                  "interpretation_limit"
+                ],
+                "properties": {
+                  "metric_id": {
+                    "type": "string",
+                    "enum": [
+                      "total_net_revenue_usd",
+                      "total_conversion_pct",
+                      "net_aov_usd",
+                      "discount_rate_pct",
+                      "refund_rate_pct",
+                      "sla_resolution_pct",
+                      "weighted_delivery_days",
+                      "aggregate_nps",
+                      "conversion_change_apr_to_jun_pp",
+                      "paid_net_revenue_usd",
+                      "paid_ad_spend_usd",
+                      "paid_roas_net"
+                    ]
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit": {
+                    "type": "string",
+                    "enum": [
+                      "USD",
+                      "%",
+                      "puntos porcentuales",
+                      "días",
+                      "puntos",
+                      "ratio"
+                    ]
+                  },
+                  "numerator": {
+                    "type": "number"
+                  },
+                  "denominator": {
+                    "type": "number"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 18,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^F0(?:0[1-9]|1[0-8])$"
+                    }
+                  },
+                  "interpretation_limit": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "interpretations": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "text",
+                  "metric_ids",
+                  "evidence_ids",
+                  "uncertainty"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "metric_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_]{2,39}$"
+                    }
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 18,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^F0(?:0[1-9]|1[0-8])$"
+                    }
+                  },
+                  "uncertainty": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "recommendations": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "hypothesis",
+                  "action",
+                  "success_metric",
+                  "metric_ids",
+                  "evidence_ids"
+                ],
+                "properties": {
+                  "hypothesis": {
+                    "type": "string"
+                  },
+                  "action": {
+                    "type": "string"
+                  },
+                  "success_metric": {
+                    "type": "string"
+                  },
+                  "metric_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9_]{2,39}$"
+                    }
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 18,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^F0(?:0[1-9]|1[0-8])$"
+                    }
+                  }
+                }
+              }
+            },
+            "limitations": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "string"
+              }
+            },
+            "missing_data": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "string"
+              }
+            },
+            "source_registry": {
+              "type": "array",
+              "minItems": 18,
+              "maxItems": 18,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "evidence_id",
+                  "source_type",
+                  "description"
+                ],
+                "properties": {
+                  "evidence_id": {
+                    "type": "string",
+                    "pattern": "^F0(?:0[1-9]|1[0-8])$"
+                  },
+                  "source_type": {
+                    "type": "string",
+                    "enum": [
+                      "fila_dataset_sintetico"
+                    ]
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "verification_checklist": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 10,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "strict": true
+      },
+      "verbosity": "medium"
+    },
+    "tools": [],
+    "usage": {
+      "input_tokens": 2747,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 2744
+      },
+      "output_tokens": 5397,
+      "output_tokens_details": {
+        "reasoning_tokens": 1949
+      },
+      "total_tokens": 8144
+    },
+    "output": [
+      {
+        "type": "message",
+        "role": "assistant",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "{\"title\":\"Borrador de informe ejecutivo verificable — Comercio Faro, abril-junio de 2026\",\"scope\":{\"entity\":\"Comercio Faro\",\"period\":\"abril-junio de 2026\",\"audience\":\"dirección de operaciones\",\"currency\":\"USD\"},\"executive_summary\":[\"Los ingresos netos agregados, definidos como ingresos brutos menos descuentos y reembolsos, fueron 148480 USD. Este importe no equivale a beneficio, margen ni rentabilidad.\",\"La conversión agregada fue 4.62% y el valor medio neto por pedido fue 53.53 USD.\",\"La conversión pasó de 4.47% en abril a 4.77% en junio, una diferencia descriptiva de 0.3 puntos porcentuales que no permite atribuir causalidad ni generalizar una tendencia.\",\"En paid, los ingresos netos fueron 70550 USD frente a 13800 USD de gasto publicitario, con un ROAS neto de 5.11. Este ratio no permite determinar rentabilidad porque no incluye costes operativos ni coste de producto.\"],\"facts\":[{\"metric_id\":\"total_net_revenue_usd\",\"label\":\"Ingresos netos totales\",\"value\":148480,\"unit\":\"USD\",\"numerator\":148480,\"denominator\":1,\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"interpretation_limit\":\"Corresponde a ingresos brutos menos descuentos y reembolsos; no equivale a beneficio, margen ni rentabilidad.\"},{\"metric_id\":\"total_conversion_pct\",\"label\":\"Conversión agregada\",\"value\":4.62,\"unit\":\"%\",\"numerator\":2774,\"denominator\":60000,\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"interpretation_limit\":\"Es una razón agregada entre pedidos y sesiones; no explica las causas de la conversión.\"},{\"metric_id\":\"net_aov_usd\",\"label\":\"Valor medio neto por pedido\",\"value\":53.53,\"unit\":\"USD\",\"numerator\":148480,\"denominator\":2774,\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"interpretation_limit\":\"Es el ingreso neto medio por pedido y no representa beneficio o margen por pedido.\"},{\"metric_id\":\"discount_rate_pct\",\"label\":\"Tasa agregada de descuentos\",\"value\":3.99,\"unit\":\"%\",\"numerator\":6330,\"denominator\":158800,\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"interpretation_limit\":\"Describe descuentos como proporción de ingresos brutos; no identifica sus motivos ni efectos causales.\"},{\"metric_id\":\"refund_rate_pct\",\"label\":\"Tasa agregada de reembolsos\",\"value\":2.51,\"unit\":\"%\",\"numerator\":3990,\"denominator\":158800,\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"interpretation_limit\":\"Describe reembolsos como proporción de ingresos brutos; el dataset no incluye motivos de reembolso.\"},{\"metric_id\":\"sla_resolution_pct\",\"label\":\"Resolución de soporte dentro del SLA\",\"value\":85.93,\"unit\":\"%\",\"numerator\":684,\"denominator\":796,\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"interpretation_limit\":\"Mide casos resueltos dentro del SLA respecto del total de casos, sin informar tiempos individuales ni complejidad.\"},{\"metric_id\":\"weighted_delivery_days\",\"label\":\"Días de entrega ponderados por pedido\",\"value\":3.29,\"unit\":\"días\",\"numerator\":9120,\"denominator\":2774,\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"interpretation_limit\":\"Es un promedio agregado y no muestra la distribución ni la variabilidad de los tiempos de entrega.\"},{\"metric_id\":\"aggregate_nps\",\"label\":\"NPS agregado\",\"value\":48.94,\"unit\":\"puntos\",\"numerator\":462,\"denominator\":944,\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"interpretation_limit\":\"Se calcula sobre respuestas NPS, no sobre todos los pedidos, y no explica los motivos de la puntuación.\"},{\"metric_id\":\"conversion_change_apr_to_jun_pp\",\"label\":\"Cambio de conversión de abril a junio\",\"value\":0.3,\"unit\":\"puntos porcentuales\",\"numerator\":4.77,\"denominator\":4.47,\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"interpretation_limit\":\"Es una diferencia en puntos porcentuales entre dos meses; no demuestra una tendencia sostenida ni causalidad.\"},{\"metric_id\":\"paid_net_revenue_usd\",\"label\":\"Ingresos netos del canal paid\",\"value\":70550,\"unit\":\"USD\",\"numerator\":70550,\"denominator\":1,\"evidence_ids\":[\"F002\",\"F004\",\"F006\",\"F008\",\"F010\",\"F012\",\"F014\",\"F016\",\"F018\"],\"interpretation_limit\":\"Corresponde a ingresos brutos paid menos descuentos y reembolsos; no equivale a beneficio ni descuenta otros costes.\"},{\"metric_id\":\"paid_ad_spend_usd\",\"label\":\"Gasto publicitario del canal paid\",\"value\":13800,\"unit\":\"USD\",\"numerator\":13800,\"denominator\":1,\"evidence_ids\":[\"F002\",\"F004\",\"F006\",\"F008\",\"F010\",\"F012\",\"F014\",\"F016\",\"F018\"],\"interpretation_limit\":\"Incluye únicamente el gasto publicitario registrado en las filas paid.\"},{\"metric_id\":\"paid_roas_net\",\"label\":\"ROAS neto del canal paid\",\"value\":5.11,\"unit\":\"ratio\",\"numerator\":70550,\"denominator\":13800,\"evidence_ids\":[\"F002\",\"F004\",\"F006\",\"F008\",\"F010\",\"F012\",\"F014\",\"F016\",\"F018\"],\"interpretation_limit\":\"Relaciona ingresos netos paid con gasto publicitario; no permite determinar beneficio, margen o rentabilidad.\"}],\"interpretations\":[{\"text\":\"Durante el periodo se registraron 148480 USD de ingresos netos y 53.53 USD de ingreso neto medio por pedido. Ambas medidas describen ingresos, no beneficio.\",\"metric_ids\":[\"total_net_revenue_usd\",\"net_aov_usd\"],\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"uncertainty\":\"Sin costes operativos ni coste de producto, no se puede determinar margen o rentabilidad.\"},{\"text\":\"La conversión de junio fue 0.3 puntos porcentuales superior a la de abril según los valores mensuales redondeados exigidos.\",\"metric_ids\":[\"conversion_change_apr_to_jun_pp\"],\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"uncertainty\":\"La comparación incluye solo dos extremos de un periodo corto y no permite atribuir causas ni asegurar continuidad.\"},{\"text\":\"Los indicadores agregados de servicio muestran 85.93% de resolución dentro del SLA, 3.29 días de entrega ponderados y un NPS de 48.94 puntos.\",\"metric_ids\":[\"sla_resolution_pct\",\"weighted_delivery_days\",\"aggregate_nps\"],\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"],\"uncertainty\":\"Los agregados no muestran distribuciones, complejidad de casos ni motivos de las respuestas NPS.\"},{\"text\":\"En paid, 70550 USD de ingresos netos frente a 13800 USD de gasto publicitario produjeron un ROAS neto descriptivo de 5.11.\",\"metric_ids\":[\"paid_net_revenue_usd\",\"paid_ad_spend_usd\",\"paid_roas_net\"],\"evidence_ids\":[\"F002\",\"F004\",\"F006\",\"F008\",\"F010\",\"F012\",\"F014\",\"F016\",\"F018\"],\"uncertainty\":\"El ratio no incorpora costes distintos del gasto publicitario y no permite determinar rentabilidad ni atribuir los ingresos a la publicidad.\"}],\"recommendations\":[{\"hypothesis\":\"Debe probarse la hipótesis de que cambios controlados en la experiencia de sesión pueden elevar la conversión agregada sin aumentar la tasa de reembolsos.\",\"action\":\"Diseñar una prueba controlada y limitada, con medición previa y posterior de pedidos, sesiones, ingresos brutos y reembolsos.\",\"success_metric\":\"Superar 4.62% de conversión agregada manteniendo la tasa de reembolsos en 2.51% o menos.\",\"metric_ids\":[\"total_conversion_pct\",\"refund_rate_pct\"],\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"]},{\"hypothesis\":\"Debe probarse la hipótesis de que reducir los tiempos de entrega puede acompañarse de una mejora del NPS; los datos actuales no demuestran esa relación causal.\",\"action\":\"Realizar un piloto con grupo de control, registrando tiempos de entrega y respuestas NPS con criterios comparables.\",\"success_metric\":\"Lograr menos de 3.29 días de entrega ponderados y un NPS superior a 48.94 puntos en el grupo de prueba frente al control.\",\"metric_ids\":[\"weighted_delivery_days\",\"aggregate_nps\"],\"evidence_ids\":[\"F001\",\"F002\",\"F003\",\"F004\",\"F005\",\"F006\",\"F007\",\"F008\",\"F009\",\"F010\",\"F011\",\"F012\",\"F013\",\"F014\",\"F015\",\"F016\",\"F017\",\"F018\"]},{\"hypothesis\":\"Debe probarse la hipótesis de que una reasignación controlada del gasto dentro de paid puede mejorar el ROAS neto sin reducir los ingresos netos paid.\",\"action\":\"Ejecutar un experimento de reasignación con grupo de control y límites de gasto previamente definidos.\",\"success_metric\":\"Superar un ROAS neto de 5.11 manteniendo los ingresos netos paid en al menos 70550 USD para un periodo comparable.\",\"metric_ids\":[\"paid_net_revenue_usd\",\"paid_roas_net\"],\"evidence_ids\":[\"F002\",\"F004\",\"F006\",\"F008\",\"F010\",\"F012\",\"F014\",\"F016\",\"F018\"]}],\"limitations\":[\"Todos los datos son sintéticos y no representan una empresa real.\",\"El periodo de tres meses es corto para generalizar tendencias.\",\"El NPS usa su propia muestra de respuestas y no todos los pedidos.\",\"No se puede determinar beneficio, margen, utilidad, lucro ni rentabilidad con este conjunto de datos.\",\"No se puede atribuir causalidad con este conjunto de datos; cualquier explicación es una hipótesis que requiere un diseño causal.\"],\"missing_data\":[\"Margen o coste de producto\",\"Inventario disponible\",\"Cohortes o clientes repetidos\",\"Grupo de control o diseño causal\"],\"source_registry\":[{\"evidence_id\":\"F001\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 1 del archivo CSV congelado\"},{\"evidence_id\":\"F002\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 2 del archivo CSV congelado\"},{\"evidence_id\":\"F003\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 3 del archivo CSV congelado\"},{\"evidence_id\":\"F004\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 4 del archivo CSV congelado\"},{\"evidence_id\":\"F005\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 5 del archivo CSV congelado\"},{\"evidence_id\":\"F006\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 6 del archivo CSV congelado\"},{\"evidence_id\":\"F007\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 7 del archivo CSV congelado\"},{\"evidence_id\":\"F008\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 8 del archivo CSV congelado\"},{\"evidence_id\":\"F009\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 9 del archivo CSV congelado\"},{\"evidence_id\":\"F010\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 10 del archivo CSV congelado\"},{\"evidence_id\":\"F011\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 11 del archivo CSV congelado\"},{\"evidence_id\":\"F012\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 12 del archivo CSV congelado\"},{\"evidence_id\":\"F013\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 13 del archivo CSV congelado\"},{\"evidence_id\":\"F014\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 14 del archivo CSV congelado\"},{\"evidence_id\":\"F015\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 15 del archivo CSV congelado\"},{\"evidence_id\":\"F016\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 16 del archivo CSV congelado\"},{\"evidence_id\":\"F017\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 17 del archivo CSV congelado\"},{\"evidence_id\":\"F018\",\"source_type\":\"fila_dataset_sintetico\",\"description\":\"Fila sintética 18 del archivo CSV congelado\"}],\"verification_checklist\":[\"Se incluyeron exactamente los 12 metric_id admitidos por el esquema.\",\"Los ocho indicadores agregados utilizan F001-F018.\",\"El cambio de conversión utiliza las seis filas de abril y las seis filas de junio.\",\"Los tres indicadores paid utilizan exactamente las nueve filas del canal paid.\",\"Los cálculos se realizaron con precisión completa y los valores finales se redondearon a dos decimales.\",\"Los hechos, las interpretaciones y las hipótesis de actuación están separados.\",\"Las interpretaciones y recomendaciones incluyen los metric_id y la unión exacta de sus evidence_ids.\",\"El registro de fuentes contiene F001-F018 una sola vez cada uno.\",\"El borrador queda sujeto a revisión humana.\"]}"
+          }
+        ]
+      }
+    ]
+  }
+}
