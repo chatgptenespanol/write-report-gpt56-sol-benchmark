@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "captured_at_utc": "2026-08-18T13:34:01.728Z",
+  "node": "v24.19.0",
+  "v8": "13.6.233.17-node.51",
+  "platform": "win32",
+  "architecture": "x64",
+  "timezone": "Africa/Cairo",
+  "dependencies": "Node.js built-ins only"
+}
