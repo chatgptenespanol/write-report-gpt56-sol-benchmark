@@ -1,0 +1,55 @@
+run_id,repetition,automatic_accepted,editorial_review,rule_id,category,critical,status,details
+write-report__gpt-5.6-sol__r1,1,false,not_testable,G01,gate,true,fail,Resultado terminal: http_or_parse_failure_503
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R01,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R02,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R03,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R04,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R05,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R06,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R07,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R08,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R09,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R10,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R11,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R12,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R13,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R14,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R15,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R16,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r1,1,false,not_testable,R17,not_executed,false,not_run,No se ejecutó tras fallar la puerta de salida
+write-report__gpt-5.6-sol__r2,2,true,pass,G01,gate,true,pass,Estructura raíz válida
+write-report__gpt-5.6-sol__r2,2,true,pass,R01,metrics,true,pass,Inventario exacto de 12 métricas
+write-report__gpt-5.6-sol__r2,2,true,pass,R02,metrics,true,pass,Valores numéricos exactamente iguales al ground truth redondeado
+write-report__gpt-5.6-sol__r2,2,true,pass,R03,metrics,true,pass,Unidades exactas
+write-report__gpt-5.6-sol__r2,2,true,pass,R04,metrics,true,pass,Numeradores y denominadores exactos
+write-report__gpt-5.6-sol__r2,2,true,pass,R05,traceability,true,pass,Evidencia completa por métrica
+write-report__gpt-5.6-sol__r2,2,true,pass,R06,traceability,true,pass,Registro F001-F018 exacto y único
+write-report__gpt-5.6-sol__r2,2,true,pass,R07,traceability,true,pass,Cada declaración vincula métricas declaradas con su conjunto de evidencia exacto
+write-report__gpt-5.6-sol__r2,2,true,pass,R08,recommendations,false,pass,Tres hipótesis con acción y métrica de éxito
+write-report__gpt-5.6-sol__r2,2,true,pass,R09,interpretation,false,pass,Interpretaciones con incertidumbre explícita
+write-report__gpt-5.6-sol__r2,2,true,pass,R10,discipline,true,pass,"Incluye literalmente el límite sobre beneficio, margen, utilidad, lucro y rentabilidad"
+write-report__gpt-5.6-sol__r2,2,true,pass,R11,discipline,true,pass,Incluye literalmente el límite sobre atribución causal
+write-report__gpt-5.6-sol__r2,2,true,pass,R12,limitations,false,pass,Datos ausentes mínimos declarados
+write-report__gpt-5.6-sol__r2,2,true,pass,R13,limitations,false,pass,Limitaciones mínimas declaradas
+write-report__gpt-5.6-sol__r2,2,true,pass,R14,scope,false,pass,Sin URLs con http(s) o www en la salida
+write-report__gpt-5.6-sol__r2,2,true,pass,R15,scope,false,pass,Sin las marcas de proveedores de IA enumeradas por la regla
+write-report__gpt-5.6-sol__r2,2,true,pass,R16,privacy,true,pass,Sin secretos ni datos personales detectables
+write-report__gpt-5.6-sol__r2,2,true,pass,R17,method,false,pass,Límites de interpretación presentes; las fórmulas se recalculan fuera de la salida
+write-report__gpt-5.6-sol__r3,3,true,pass,G01,gate,true,pass,Estructura raíz válida
+write-report__gpt-5.6-sol__r3,3,true,pass,R01,metrics,true,pass,Inventario exacto de 12 métricas
+write-report__gpt-5.6-sol__r3,3,true,pass,R02,metrics,true,pass,Valores numéricos exactamente iguales al ground truth redondeado
+write-report__gpt-5.6-sol__r3,3,true,pass,R03,metrics,true,pass,Unidades exactas
+write-report__gpt-5.6-sol__r3,3,true,pass,R04,metrics,true,pass,Numeradores y denominadores exactos
+write-report__gpt-5.6-sol__r3,3,true,pass,R05,traceability,true,pass,Evidencia completa por métrica
+write-report__gpt-5.6-sol__r3,3,true,pass,R06,traceability,true,pass,Registro F001-F018 exacto y único
+write-report__gpt-5.6-sol__r3,3,true,pass,R07,traceability,true,pass,Cada declaración vincula métricas declaradas con su conjunto de evidencia exacto
+write-report__gpt-5.6-sol__r3,3,true,pass,R08,recommendations,false,pass,Tres hipótesis con acción y métrica de éxito
+write-report__gpt-5.6-sol__r3,3,true,pass,R09,interpretation,false,pass,Interpretaciones con incertidumbre explícita
+write-report__gpt-5.6-sol__r3,3,true,pass,R10,discipline,true,pass,"Incluye literalmente el límite sobre beneficio, margen, utilidad, lucro y rentabilidad"
+write-report__gpt-5.6-sol__r3,3,true,pass,R11,discipline,true,pass,Incluye literalmente el límite sobre atribución causal
+write-report__gpt-5.6-sol__r3,3,true,pass,R12,limitations,false,pass,Datos ausentes mínimos declarados
+write-report__gpt-5.6-sol__r3,3,true,pass,R13,limitations,false,pass,Limitaciones mínimas declaradas
+write-report__gpt-5.6-sol__r3,3,true,pass,R14,scope,false,pass,Sin URLs con http(s) o www en la salida
+write-report__gpt-5.6-sol__r3,3,true,pass,R15,scope,false,pass,Sin las marcas de proveedores de IA enumeradas por la regla
+write-report__gpt-5.6-sol__r3,3,true,pass,R16,privacy,true,pass,Sin secretos ni datos personales detectables
+write-report__gpt-5.6-sol__r3,3,true,pass,R17,method,false,pass,Límites de interpretación presentes; las fórmulas se recalculan fuera de la salida
